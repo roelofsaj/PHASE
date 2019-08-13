@@ -8,9 +8,9 @@ This is a MATLAB GUI that reads .txt files output from TriKinetics activity moni
 
 ### Getting Started ###
 
-The easiest way to use the PHASE program is to install one of the pre-compiled program versions. Open the correct version for your OS (Windows or Mac), and the correct version of the MATLAB runtime engine and required support packages will be downloaded and installed.
+The easiest way to use the PHASE program is to install one of the [pre-compiled program versions](Installer%20Downloads). Open the correct version for your OS (Windows or Mac), and the correct version of the MATLAB runtime engine and required support packages will be downloaded and installed.
 
-To run as a MATLAB app, install the .mlappinstall file. This requires **MATLAB v2018b** or later, as well as the **MATLAB Signal Processing Toolbox** (in order to do the latency and slope analysis types that require smoothing functions) and the **MATLAB Financial Toolbox** (because for some reason this is where the nice graphical calendar-style date picker for specifying experiment start time resides).
+To run as a MATLAB app, install the [.mlappinstall file](Installer%20Downloads/PHASE.mlappinstall). This requires **MATLAB v2018b** or later, as well as the **MATLAB Signal Processing Toolbox** (in order to do the latency and slope analysis types that require smoothing functions) and the **MATLAB Financial Toolbox** (because for some reason this is where the nice graphical calendar-style date picker for specifying experiment start time resides).
 
 If running from source code, the main file is **PHASE.m**. All processing is done by a hierarchy of analysis classes, contained in the SleepyFlies folder.
 
@@ -50,7 +50,7 @@ The analysis program is written as a hierarchy of classes, with each layer build
 Most individual .m files include a detailed header section describing their use and functionality.
 
 PHASE.prj is the project file for the MATLAB app installer.
-PHASE_Mac.prj and PHASE_Win.prj are the project files for the standalones for Mac and Windows, respectively. 
+PHASE_Mac.prj and PHASE_Win.prj are the project files for the standalones for Mac and Windows, respectively.
 
 
 ### Contact Details ###
