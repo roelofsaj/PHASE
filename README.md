@@ -60,7 +60,7 @@ When running the compiled versions, all dependencies are inluded in the runtime 
 
 When running the MATLAB app, requirements other than MATLAB Toolboxes are included in the app installer.
 
-The calendar picker function for experiment start time requires the MATLAB Financial Toolbox. If this toolbox is not installed,
+As mentioned above, the calendar picker function for experiment start time requires the MATLAB Financial Toolbox. If this toolbox is not installed,
 the date must be entered manually.
 The smoothed analysis functions require the MATLAB Signal Processing Toolbox. If this toolbox is not installed, the program
 will run but will not be able to do any analysis requiring data smoothing; a warning message will be displayed if this is attempted.
