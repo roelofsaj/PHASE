@@ -8,7 +8,9 @@ This is a MATLAB GUI that reads .txt files output from TriKinetics activity moni
 
 ### Getting Started ###
 
-The easiest way to use the PHASE program is to install one of the [pre-compiled program versions](Installer%20Downloads). Open the correct version for your OS (Windows or Mac), and the correct version of the MATLAB runtime engine and required support packages will be downloaded and installed.
+The easiest way to use the PHASE program is to install one of the [pre-compiled program versions](Installer%20Downloads). Open the correct version for your OS (Windows or Mac), and the correct version of the MATLAB runtime engine and required support packages will be downloaded and installed. *Note for Mac users:* The Mac standalone is packaged into a zip file; you'll need to un-zip this file and run the app installation file it contains.
+If you get a security warning, you may need to Ctrl+Click the installation file name,
+select Open from the popup menu, and confirm that you want to run this file.
 
 To run as a MATLAB app, install the [.mlappinstall file](Installer%20Downloads/PHASE.mlappinstall). This requires **MATLAB v2018b** or later, as well as the **MATLAB Signal Processing Toolbox** (in order to do the latency and slope analysis types that require smoothing functions) and the **MATLAB Financial Toolbox** (because for some reason this is where the nice graphical calendar-style date picker for specifying experiment start time resides).
 
