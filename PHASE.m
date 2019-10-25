@@ -61,8 +61,9 @@ channels = 1:32;
 channels = arrayfun(@(x) sprintf("%02d", x), channels');
 set(handles.lstChannels, 'String', channels);
 
-%Initialize the class variable to empty
+%Initialize the SleepyFlies class variable and data folder to empty 
 handles.sf = [];
+handles.dataFolder = [];
 
 % Initialize the active panel
 handles.activePanel = 'Analysis';
@@ -76,10 +77,10 @@ guidata(hObject, handles);
 
 % If we're on a Mac, make sure the poi libraries are on the java class path
 if ~ispc
-% Add Java POI Libs to matlab javapath if necessary
+    % Add Java POI Libs to matlab javapath if necessary
     if exist('org.apache.poi.ss.usermodel.WorkbookFactory', 'class') ~= 8 ...
-        || exist('org.apache.poi.hssf.usermodel.HSSFWorkbook', 'class') ~= 8 ...
-        || exist('org.apache.poi.xssf.usermodel.XSSFWorkbook', 'class') ~= 8
+            || exist('org.apache.poi.hssf.usermodel.HSSFWorkbook', 'class') ~= 8 ...
+            || exist('org.apache.poi.xssf.usermodel.XSSFWorkbook', 'class') ~= 8
         appdir = fileparts(mfilename('fullpath'));
         javaaddpath(fullfile(appdir, 'poi_library/poi-3.8-20120326.jar'));
         javaaddpath(fullfile(appdir, 'poi_library/poi-ooxml-3.8-20120326.jar'));
@@ -89,7 +90,7 @@ if ~ispc
         javaaddpath(fullfile(appdir, 'poi_library/stax-api-1.0.1.jar'));
     end
 end
- 
+
 if ~license('test', 'Financial_Toolbox')
     %The calendar UI won't work, so don't show the button
     set(handles.pbExpStart, 'visible', 'off');
@@ -140,8 +141,69 @@ function txtFolderIn_Callback(hObject, eventdata, handles)
 % hObject    handle to txtFolderIn (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-handles.sf = [];
-guidata(hObject, handles);
+newFolder = get(hObject,'string');
+openDataFolder(newFolder, handles);
+
+% --- Executes on button press in pbFolderIn.
+function pbFolderIn_Callback(hObject, eventdata, handles)
+% Open a file dialog
+newFolder = uigetdir();
+if newFolder ~= 0 % If the user hit cancel, don't do anything
+    set(handles.txtFolderIn, 'String', newFolder);
+    openDataFolder(newFolder, handles);
+end
+
+function openDataFolder(folderIn, handles)
+import SleepyFlies.*
+if ~strcmp(handles.dataFolder, folderIn)
+    % If the folder changed, clear the existing SleepyFlies class object,
+    % since this is new data.
+    handles.sf = [];
+    handles.dataFolder = folderIn;
+    guidata(handles.pbFolderIn, handles);
+    if isfolder(folderIn)
+        openDataFolder(folderIn, handles);
+    else
+        msgbox('Please enter a valid folder path.', 'Invalid path');
+        return
+    end
+    try
+        files = dir(folderIn);
+        % Try to figure out the file name pattern
+        sampleName = [];
+        i = 3;  % The first two listed files are likely . and ..
+        while isempty(sampleName) && i <= size(files,1)
+            if ~files(i).isdir && ~strcmp(files(i).name(1), '.')
+                sampleName = files(i).name;
+            end
+            i = i+1;
+        end
+        pattern = '(\w+)M\d{3}C\d{2}.*';
+        fileString = regexp(sampleName, pattern, 'tokens');
+        if ~isempty(fileString)
+            set(handles.txtRunName, 'String', fileString{1}{1});
+            [boards, channels] = getBoardsAndChannels(fileString{1}{1}, files);
+            set(handles.lstBoards, 'string', boards);
+            set(handles.lstChannels, 'string', channels);
+            % While we're at it, see if we can get a date to start on
+            [dateStr, timeStr] = DataRaw.getExperimentDate(fullfile(folderIn, sampleName));
+            set(handles.txtExpStartDate, 'String', dateStr);
+            set(handles.txtExpStartTime, 'String', timeStr);
+        end
+    catch ME
+        % Ignore it.
+    end
+end
+
+function [boards, channels] = getBoardsAndChannels(runName, fileList)
+fileList = {fileList(:).name};
+pattern = '\w+M(\d{3})C(\d{2}).*';
+boardsChans = regexp(fileList, pattern, 'tokens');
+boardsChans = boardsChans(cellfun(@(x) ~isempty(x), boardsChans));
+boardsChans = vertcat(boardsChans{:});
+boardsChans = vertcat(boardsChans{:});
+boards = unique(boardsChans(:,1));
+channels = unique(boardsChans(:,2));
 
 % --- Executes during object creation, after setting all properties.
 function txtFolderIn_CreateFcn(hObject, eventdata, handles)
@@ -155,56 +217,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
     set(hObject,'BackgroundColor','white');
 end
 
-% --- Executes on button press in pbFolderIn.
-function pbFolderIn_Callback(hObject, eventdata, handles)
-% Open a file dialog
-folderIn = uigetdir();
-if folderIn ~= 0 % If the user hit cancel, don't do anything
-    oldFolder = get(handles.txtFolderIn, 'String');
-    if ~strcmp(oldFolder, folderIn)
-        % If the folder changed, clear the existing class object
-        handles.sf = [];
-        guidata(hObject, handles);
-        set(handles.txtFolderIn, 'String', folderIn);
-        try
-            files = dir(folderIn);
-            % Try to figure out the file name pattern
-            sampleName = [];
-            i = 3;  % The first two listed files are likely . and ..
-            while isempty(sampleName) && i <= size(files,1)
-                if ~files(i).isdir && ~strcmp(files(i).name(1), '.')
-                    sampleName = files(i).name;
-                end
-                i = i+1;
-            end
-            pattern = '(\w+)M\d{3}C\d{2}.*';
-            fileString = regexp(sampleName, pattern, 'tokens');
-            if ~isempty(fileString)
-                set(handles.txtRunName, 'String', fileString{1}{1});
-                [boards, channels] = getBoardsAndChannels(fileString{1}{1}, files);
-                set(handles.lstBoards, 'string', boards);
-                set(handles.lstChannels, 'string', channels);
-                % While we're at it, see if we can get a date to start on
-                [dateStr, timeStr] = DataRaw.getExperimentDate(fullfile(folderIn, sampleName));
-                set(handles.txtExpStartDate, 'String', dateStr);
-                set(handles.txtExpStartTime, 'String', timeStr);
-            end
-        catch ME
-            % Ignore it.
-        end
-    end
-end
-
-function [boards, channels] = getBoardsAndChannels(runName, fileList)
-    fileList = {fileList(:).name};
-    pattern = '\w+M(\d{3})C(\d{2}).*';
-    boardsChans = regexp(fileList, pattern, 'tokens');
-    boardsChans = boardsChans(cellfun(@(x) ~isempty(x), boardsChans));
-    boardsChans = vertcat(boardsChans{:});
-    boardsChans = vertcat(boardsChans{:});
-    boards = unique(boardsChans(:,1));
-    channels = unique(boardsChans(:,2));
-    
 function txtRunName_Callback(hObject, eventdata, handles)
 % If this changes, clear the existing class object
 handles.sf = [];
@@ -622,6 +634,7 @@ doEduction(handles, 0,1);
 function doEduction(handles, isSleep, isNormalized)
 % If we didn't already make the experiment object, get the inputs we're
 % going to need to make the experiment class object
+import SleepyFlies.*
 
 folderIn = get(handles.txtFolderIn, 'String');
 runName = get(handles.txtRunName, 'String');
@@ -638,7 +651,7 @@ end
 if get(handles.btnYaxisManual, 'value')
     % Manual y axis specification
     settings.yrange = [str2double(get(handles.txtYaxisMin, 'string')) ...
-                       str2double(get(handles.txtYaxisMax, 'string'))];
+        str2double(get(handles.txtYaxisMax, 'string'))];
 else
     settings.yrange = [];
 end
@@ -692,7 +705,7 @@ if get(handles.chkPhase, 'Value')
     settings.phaseFrameLen = str2double(get(handles.txtPhaseFilterLength, 'string'));
     settings.phaseMinDist = sscanf(get(handles.txtPhaseMinDist, 'String'),'%u,')';
     settings.phaseDays = sscanf(get(handles.txtPhaseDays, 'String'),'%u,')';
-    settings.phaseZT = sscanf(get(handles.txtPhaseZT, 'String'),'%u,')'; 
+    settings.phaseZT = sscanf(get(handles.txtPhaseZT, 'String'),'%u,')';
     settings.doPhase = true;
 else
     settings.doPhase = false;
@@ -773,7 +786,7 @@ try
         %     'isSleep', isSleep, 'title', settings.title, 'normalizeActivity', isNormalized);
         % analysis.writeDataToFile(settings.folderOut);
     end
-
+    
     if settings.doLatency
         latency = DataForAnalysisLatency(experiment, ...
             'days', settings.latencyDays,...
@@ -808,7 +821,7 @@ catch ME
     if ~isempty(ME.cause)
         msg = ME.cause{1}.message;
         icon = 'warn';
-    else 
+    else
         msg = [ME.identifier ':  ' ME.message];
         icon = 'error';
     end
