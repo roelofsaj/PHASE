@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration file="C:\Users\aheinlei\PROJECTS\mcdb-shafer-sleepyflies\PHASE_Win.prj" location="C:\Users\aheinlei\PROJECTS\mcdb-shafer-sleepyflies" name="PHASE_Win" target="target.ezdeploy.standalone" target-name="Application Compiler">
+  <configuration file="C:\Users\aheinlei\PROJECTS\PHASE\ProjectFiles\PHASE_Win.prj" location="C:\Users\aheinlei\PROJECTS\PHASE\ProjectFiles" name="PHASE_Win" target="target.ezdeploy.standalone" target-name="Application Compiler">
     <param.appname>PHASE</param.appname>
     <param.icon>${PROJECT_ROOT}\PHASE_Win_resources\icon.ico</param.icon>
     <param.icons>
@@ -8,17 +8,17 @@
       <file>${PROJECT_ROOT}\PHASE_Win_resources\icon_24.png</file>
       <file>${PROJECT_ROOT}\PHASE_Win_resources\icon_16.png</file>
     </param.icons>
-    <param.version>2.7</param.version>
+    <param.version>5.0</param.version>
     <param.authnamewatermark>Abbey Roelofs</param.authnamewatermark>
     <param.email>aheinlei@umich.edu</param.email>
     <param.company>University of Michigan</param.company>
     <param.summary>Activity, Sleep, and Entrainment Analysis</param.summary>
     <param.description />
-    <param.screenshot>${PROJECT_ROOT}\icon2.png</param.screenshot>
+    <param.screenshot>${PROJECT_ROOT}\PHASEicon2.png</param.screenshot>
     <param.guid />
-    <param.installpath.string>\University of Michigan\PHASE\</param.installpath.string>
+    <param.installpath.string>\PHASE\</param.installpath.string>
     <param.installpath.combo>option.installpath.programfiles</param.installpath.combo>
-    <param.logo />
+    <param.logo>${PROJECT_ROOT}\PHASEicon2.png</param.logo>
     <param.install.notes />
     <param.target.install.notes />
     <param.intermediate>${PROJECT_ROOT}\PHASE_Win\for_testing</param.intermediate>
@@ -45,9 +45,8 @@
     <unset>
       <param.description />
       <param.guid />
-      <param.installpath.string />
       <param.installpath.combo />
-      <param.logo />
+      <param.install.notes />
       <param.target.install.notes />
       <param.intermediate />
       <param.files.only />
@@ -71,113 +70,42 @@
       <param.help.text />
     </unset>
     <fileset.main>
-      <file>${PROJECT_ROOT}\ActivityMonitor.m</file>
+      <file>C:\Users\aheinlei\PROJECTS\PHASE\PHASE.m</file>
     </fileset.main>
     <fileset.resources>
-      <file>C:\Users\aheinlei\Documents\MATLAB\FEX\barwitherr_license.txt</file>
-      <file>C:\Users\aheinlei\Documents\MATLAB\FEX\findseq\findseq_license.txt</file>
-      <file>C:\Users\aheinlei\Documents\MATLAB\FEX\shadedErrorBar-master\shadedErrorBar_licence.txt</file>
-      <file>C:\Users\aheinlei\Documents\MATLAB\FEX\xlwrite_license.txt</file>
+      <file>C:\Users\aheinlei\PROJECTS\PHASE\+SleepyFlies</file>
+      <file>C:\Users\aheinlei\PROJECTS\PHASE\Averaging.m</file>
+      <file>C:\Users\aheinlei\PROJECTS\PHASE\ImageAnalysis.m</file>
+      <file>C:\Users\aheinlei\PROJECTS\PHASE\MultiPlots.m</file>
+      <file>C:\Users\aheinlei\PROJECTS\PHASE\PageMultiPlots.m</file>
+      <file>C:\Users\aheinlei\PROJECTS\PHASE\PHASE.fig</file>
+      <file>C:\Users\aheinlei\PROJECTS\PHASE\PHASE.m</file>
+      <file>C:\Users\aheinlei\PROJECTS\PHASE\PlotType.m</file>
+      <file>C:\Users\aheinlei\PROJECTS\PHASE\SupportFiles</file>
     </fileset.resources>
     <fileset.package />
-    <fileset.depfun>
-      <file>C:\Users\aheinlei\Documents\MATLAB\FEX\barwitherr.m</file>
-      <file>C:\Users\aheinlei\Documents\MATLAB\FEX\findseq\findseq.m</file>
-      <file>C:\Users\aheinlei\Documents\MATLAB\FEX\shadedErrorBar.m</file>
-      <file>C:\Users\aheinlei\Documents\MATLAB\FEX\table2labeledcells.m</file>
-      <file>C:\Users\aheinlei\Documents\MATLAB\FEX\xlwrite.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\calcAveraged.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\calcDayCentered.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\calcLatency.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\convertToSleep.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\defineAnalysis.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\doAnalysis.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\educer.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\educerPlots.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\educerPlotsBar.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\educerPlotsLine.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\educerStats.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\findBinByDatetime.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\getDayData.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\getExperimentData.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\getLatencyIntervals.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\importFlyData.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\latencyCalc.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\latencyPlots.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\latencyPlotSingle.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\layerDataForAveraging.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\makeDayNightMask.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\phasePlotSingle.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\preparePlotData.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\reBinData.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\SleepyFlies.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\smoothedAnalysis.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\smoothedPlots.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\writeEducerData.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\writeLatencyData.m</file>
-      <file>${PROJECT_ROOT}\@SleepyFlies\writePhaseData.m</file>
-      <file>${PROJECT_ROOT}\Averaging.m</file>
-      <file>${PROJECT_ROOT}\MultiPlots.m</file>
-      <file>${PROJECT_ROOT}\PageMultiPlots.m</file>
-      <file>${PROJECT_ROOT}\PlotType.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataExperiment\DataExperiment.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataExperiment\findBinByDatetime.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataExperiment\getDayData.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataExperiment\makeDayNightMask.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataForAnalysis\buildPlotSettings.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataForAnalysis\calcAveraged.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataForAnalysis\calcDayCentered.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataForAnalysis\convertToSleep.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataForAnalysis\DataForAnalysis.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataForAnalysis\getAnalysisData.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataForAnalysis\layerDataForAveraging.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataForAnalysis\plotBars.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataForAnalysis\plotLine.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataForAnalysis\reBinData.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataForAnalysisAS\DataForAnalysisAS.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataForAnalysisAS\experimentStatistics.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataForAnalysisAS\writeExperimentData.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataForAnalysisLatency\calcLatencies.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataForAnalysisLatency\DataForAnalysisLatency.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataForAnalysisLatency\getLatencyIntervals.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataForAnalysisLatency\plotLatency.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataForAnalysisLatency\plotSlope.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataForAnalysisLatency\writeLatencyData.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataForAnalysisPhase\calcPhase.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataForAnalysisPhase\DataForAnalysisPhase.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataForAnalysisPhase\plotPhase.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataForAnalysisPhase\writePhaseData.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataForAnalysisSmoothed\DataForAnalysisSmoothed.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataRaw\DataRaw.m</file>
-      <file>${PROJECT_ROOT}\SleepyFlies\@DataRaw\importFlyData.m</file>
-    </fileset.depfun>
+    <fileset.depfun />
     <build-deliverables>
-      <file location="${PROJECT_ROOT}\PHASE_Win\for_testing" name="PHASE.exe" optional="false">C:\Users\aheinlei\PROJECTS\mcdb-shafer-sleepyflies\PHASE_Win\for_testing\PHASE.exe</file>
-      <file location="${PROJECT_ROOT}\PHASE_Win\for_testing" name="readme.txt" optional="true">C:\Users\aheinlei\PROJECTS\mcdb-shafer-sleepyflies\PHASE_Win\for_testing\readme.txt</file>
-      <file location="${PROJECT_ROOT}\PHASE_Win\for_testing" name="splash.png" optional="false">C:\Users\aheinlei\PROJECTS\mcdb-shafer-sleepyflies\PHASE_Win\for_testing\splash.png</file>
+      <file location="${PROJECT_ROOT}\PHASE_Win\for_testing" name="splash.png" optional="false">C:\Users\aheinlei\PROJECTS\PHASE\ProjectFiles\PHASE_Win\for_testing\splash.png</file>
+      <file location="${PROJECT_ROOT}\PHASE_Win\for_testing" name="readme.txt" optional="true">C:\Users\aheinlei\PROJECTS\PHASE\ProjectFiles\PHASE_Win\for_testing\readme.txt</file>
+      <file location="${PROJECT_ROOT}\PHASE_Win\for_testing" name="PHASE.exe" optional="false">C:\Users\aheinlei\PROJECTS\PHASE\ProjectFiles\PHASE_Win\for_testing\PHASE.exe</file>
     </build-deliverables>
     <workflow />
     <matlab>
-      <root>C:\Program Files\MATLAB\R2017b</root>
+      <root>C:\Program Files\MATLAB\R2018b</root>
       <toolboxes>
-        <toolbox name="fixedpoint" />
         <toolbox name="matlabcoder" />
-        <toolbox name="embeddedcoder" />
+        <toolbox name="neuralnetwork" />
       </toolboxes>
-      <toolbox>
-        <fixedpoint>
-          <enabled>true</enabled>
-        </fixedpoint>
-      </toolbox>
       <toolbox>
         <matlabcoder>
           <enabled>true</enabled>
         </matlabcoder>
       </toolbox>
       <toolbox>
-        <embeddedcoder>
+        <neuralnetwork>
           <enabled>true</enabled>
-        </embeddedcoder>
+        </neuralnetwork>
       </toolbox>
     </matlab>
     <platform>

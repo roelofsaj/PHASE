@@ -52,6 +52,12 @@ function PHASE_OpeningFcn(hObject, eventdata, handles, varargin)
 % handles    structure with handles and user data (see GUIDATA)
 % varargin   command line arguments to PHASE (see VARARGIN)
 
+% add the SleepyFlies and SupportFiles folders to the path
+% Determine where your m-file's folder is.
+folder = fileparts(which(mfilename)); 
+% Add that folder plus all subfolders to the path.
+addpath(genpath(fullfile(folder, 'SleepyFlies')));
+addpath(genpath(fullfile(folder, 'SupportFiles')));
 
 % Populate the board list
 boards = 1:300;
@@ -154,7 +160,7 @@ if newFolder ~= 0 % If the user hit cancel, don't do anything
 end
 
 function openDataFolder(folderIn, handles)
-import SleepyFlies.*
+%import SleepyFlies.*
 if ~strcmp(handles.dataFolder, folderIn)
     % If the folder changed, clear the existing SleepyFlies class object,
     % since this is new data.
@@ -634,7 +640,7 @@ doEduction(handles, 0,1);
 function doEduction(handles, isSleep, isNormalized)
 % If we didn't already make the experiment object, get the inputs we're
 % going to need to make the experiment class object
-import SleepyFlies.*
+%import SleepyFlies.*
 
 folderIn = get(handles.txtFolderIn, 'String');
 runName = get(handles.txtRunName, 'String');
