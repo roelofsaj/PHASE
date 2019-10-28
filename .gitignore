@@ -6,3 +6,21 @@ ProjectFiles/PHASE_Win/for_redistribution_files_only/
 ProjectFiles/PHASE_Win/
 
 ProjectFiles/PHASE_Win_resources/
+
+ProjectFiles/PHASE_Mac/for_redistribution/
+
+ProjectFiles/PHASE_Mac/for_redistribution_files_only/PHASE.app/Contents/
+
+ProjectFiles/PHASE_Mac/for_redistribution_files_only/
+
+ProjectFiles/PHASE_Mac/for_testing/
+
+ProjectFiles/PHASE_Mac/
+
+ProjectFiles/PHASE_Mac_resources/
+
+ProjectFiles/PHASE_resources/
+
+ProjectFiles/.DS_Store
+
+.DS_Store
