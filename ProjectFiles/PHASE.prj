@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.apptool" plugin-version="1.0">
-  <configuration build-checksum="1485086835" file="/Users/abbey/work/mcdb-shafer-sleepyflies/PHASE.prj" location="/Users/abbey/work/mcdb-shafer-sleepyflies" name="PHASE" target="target.mlapps" target-name="Package App">
+  <configuration build-checksum="2090777452" file="/Users/abbey/work/PHASE/ProjectFiles/PHASE.prj" location="/Users/abbey/work/PHASE/ProjectFiles" name="PHASE" target="target.mlapps" target-name="Package App">
     <param.appname>PHASE</param.appname>
     <param.authnamewatermark>Abbey Roelofs</param.authnamewatermark>
     <param.email>aheinlei@umich.edu</param.email>
@@ -13,12 +13,12 @@
     <param.summary>Activity, Sleep, and Entrainment Analysis</param.summary>
     <param.description />
     <param.screenshot />
-    <param.version>4.2</param.version>
+    <param.version>5.0</param.version>
     <param.products.name />
     <param.products.id />
     <param.products.version />
     <param.platforms />
-    <param.output>/Users/abbey/work/mcdb-shafer-sleepyflies</param.output>
+    <param.output>${PROJECT_ROOT}</param.output>
     <param.guid>2e990bfd-e73e-4174-984c-08eb4e9ebb17</param.guid>
     <unset>
       <param.description />
@@ -30,65 +30,25 @@
       <param.output />
     </unset>
     <fileset.main>
-      <file>${PROJECT_ROOT}/PHASE.m</file>
+      <file>/Users/abbey/work/PHASE/PHASE.m</file>
     </fileset.main>
     <fileset.depfun>
-      <file>/Users/abbey/Documents/MATLAB/FEX/barwitherr.m</file>
-      <file>/Users/abbey/Documents/MATLAB/FEX/findseq/findseq.m</file>
-      <file>/Users/abbey/Documents/MATLAB/FEX/shadedErrorBar-master/shadedErrorBar.m</file>
-      <file>/Users/abbey/Documents/MATLAB/FEX/table2labeledcells.m</file>
-      <file>/Users/abbey/Documents/MATLAB/FEX/xlwrite.m</file>
-      <file>${PROJECT_ROOT}/Averaging.m</file>
-      <file>${PROJECT_ROOT}/PHASE.fig</file>
-      <file>${PROJECT_ROOT}/PageMultiPlots.m</file>
-      <file>${PROJECT_ROOT}/PlotType.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataExperiment/DataExperiment.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataExperiment/findBinByDatetime.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataExperiment/getDayData.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataExperiment/makeDayNightMask.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysis/DataForAnalysis.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysis/buildPlotSettings.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysis/calcAveraged.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysis/calcDayCentered.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysis/convertToSleep.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysis/getAnalysisData.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysis/layerDataForAveraging.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysis/normalizeData.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysis/plotBars.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysis/plotLine.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysis/reBinData.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisAS/DataForAnalysisAS.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisAS/experimentStatistics.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisAS/writeExperimentData.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisLatency/DataForAnalysisLatency.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisLatency/calcLatencies.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisLatency/getLatencyIntervals.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisLatency/plotLatency.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisLatency/plotSlope.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisLatency/writeLatencyData.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisPhase/DataForAnalysisPhase.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisPhase/calcPhase.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisPhase/plotPhase.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisPhase/writePhaseData.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisSmoothed/DataForAnalysisSmoothed.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataRaw/DataRaw.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataRaw/importFlyData.m</file>
+      <file>/Users/abbey/work/PHASE/Averaging.m</file>
+      <file>/Users/abbey/work/PHASE/PHASE.fig</file>
+      <file>/Users/abbey/work/PHASE/PageMultiPlots.m</file>
+      <file>/Users/abbey/work/PHASE/PlotType.m</file>
     </fileset.depfun>
     <fileset.resources>
-      <file>/Users/abbey/Documents/MATLAB/FEX/barwitherr_license.txt</file>
-      <file>/Users/abbey/Documents/MATLAB/FEX/findseq/findseq_license.txt</file>
-      <file>/Users/abbey/Documents/MATLAB/FEX/shadedErrorBar-master/shadedErrorBar_licence.txt</file>
-      <file>/Users/abbey/Documents/MATLAB/FEX/xlwrite_license.txt</file>
-      <file>${PROJECT_ROOT}/poi_library</file>
-      <file>${PROJECT_ROOT}/readme.md</file>
+      <file>/Users/abbey/work/PHASE/SleepyFlies</file>
+      <file>/Users/abbey/work/PHASE/SupportFiles</file>
     </fileset.resources>
     <fileset.package />
     <build-deliverables>
-      <file location="/Users/abbey/work" name="mcdb-shafer-sleepyflies" optional="false">/Users/abbey/work/mcdb-shafer-sleepyflies</file>
+      <file location="/Users/abbey/work/PHASE" name="ProjectFiles" optional="false">/Users/abbey/work/PHASE/ProjectFiles</file>
     </build-deliverables>
     <workflow />
     <matlab>
-      <root>/Applications/MATLAB_R2018b.app</root>
+      <root>/Applications/MATLAB_R2019b.app</root>
       <toolboxes>
         <toolbox name="matlabcoder" />
         <toolbox name="neuralnetwork" />
@@ -113,7 +73,7 @@
       <vista>false</vista>
       <linux>false</linux>
       <solaris>false</solaris>
-      <osver>10.14.5</osver>
+      <osver>10.15</osver>
       <os32>false</os32>
       <os64>true</os64>
       <arch>maci64</arch>

@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration file="/Users/abbey/work/mcdb-shafer-sleepyflies/PHASE_Mac.prj" location="/Users/abbey/work/mcdb-shafer-sleepyflies" name="PHASE_Mac" preferred-package-location="/Users/aheinlei/work/mcdb-shafer-sleepyflies/PHASE_Mac/for_redistribution" preferred-package-type="package.type.app" target="target.ezdeploy.standalone" target-name="Application Compiler">
+  <configuration build-checksum="4134754222" file="/Users/abbey/work/PHASE/ProjectFiles/PHASE_Mac.prj" location="/Users/abbey/work/PHASE/ProjectFiles" name="PHASE_Mac" preferred-package-location="/Users/abbey/work/PHASE/ProjectFiles/PHASE_Mac/for_redistribution" preferred-package-type="package.type.app" target="target.ezdeploy.standalone" target-name="Application Compiler">
     <param.appname>PHASE</param.appname>
     <param.icon>${PROJECT_ROOT}/PHASE_Mac_resources/icon.icns</param.icon>
     <param.icons>
@@ -8,17 +8,17 @@
       <file>${PROJECT_ROOT}/PHASE_Mac_resources/icon_24.png</file>
       <file>${PROJECT_ROOT}/PHASE_Mac_resources/icon_16.png</file>
     </param.icons>
-    <param.version>4.2</param.version>
+    <param.version>5.0</param.version>
     <param.authnamewatermark>A. Roelofs</param.authnamewatermark>
     <param.email>aheinlei@umich.edu</param.email>
     <param.company>University of Michigan</param.company>
     <param.summary>Activity, Sleep, and Entrainment Analysis</param.summary>
     <param.description />
-    <param.screenshot>${PROJECT_ROOT}/icon2.png</param.screenshot>
+    <param.screenshot>${PROJECT_ROOT}/PHASEicon1.png</param.screenshot>
     <param.guid />
-    <param.installpath.string>/University_of_Michigan/PHASE/</param.installpath.string>
+    <param.installpath.string>/PHASE/</param.installpath.string>
     <param.installpath.combo>option.installpath.systemwideapp</param.installpath.combo>
-    <param.logo />
+    <param.logo>${PROJECT_ROOT}/PHASEicon1.png</param.logo>
     <param.install.notes>In the following directions, replace MR by the directory where MATLAB or the MATLAB Runtime is installed on the target machine.
 
 If the environment variable DYLD_LIBRARY_PATH is undefined, set it to the following string:
@@ -28,15 +28,15 @@ MR/v93/runtime/maci64:MR/v93/sys/os/maci64:MR/v93/bin/maci64
 If it is defined, set it to the following:
 
 ${DYLD_LIBRARY_PATH}:MR/v93/runtime/maci64:MR/v93/sys/os/maci64:MR/v93/bin/maci64</param.install.notes>
-    <param.target.install.notes>In the following directions, replace MR/v95 by the directory on the target machine where MATLAB is installed, or MR by the directory where the MATLAB Runtime is installed.
+    <param.target.install.notes>In the following directions, replace MR/v97 by the directory on the target machine where MATLAB is installed, or MR by the directory where the MATLAB Runtime is installed.
 
 If the environment variable DYLD_LIBRARY_PATH is undefined, set it to the following string:
 
-MR/v95/runtime/maci64:MR/v95/sys/os/maci64:MR/v95/bin/maci64
+MR/v97/runtime/maci64:MR/v97/sys/os/maci64:MR/v97/bin/maci64
 
 If it is defined, set it to the following:
 
-${DYLD_LIBRARY_PATH}:MR/v95/runtime/maci64:MR/v95/sys/os/maci64:MR/v95/bin/maci64</param.target.install.notes>
+${DYLD_LIBRARY_PATH}:MR/v97/runtime/maci64:MR/v97/sys/os/maci64:MR/v97/bin/maci64</param.target.install.notes>
     <param.intermediate>${PROJECT_ROOT}/PHASE_Mac/for_testing</param.intermediate>
     <param.files.only>${PROJECT_ROOT}/PHASE_Mac/for_redistribution_files_only</param.files.only>
     <param.output>${PROJECT_ROOT}/PHASE_Mac/for_redistribution</param.output>
@@ -57,13 +57,16 @@ ${DYLD_LIBRARY_PATH}:MR/v95/runtime/maci64:MR/v95/sys/os/maci64:MR/v95/bin/maci6
     <param.native.matlab>false</param.native.matlab>
     <param.checkbox>false</param.checkbox>
     <param.example />
-    <param.help.text />
+    <param.help.text>Syntax 
+	 PHASE -? 
+	 PHASE varargin 
+ Input Arguments 
+	 -?  print help on how to use the application 
+	 varargin  input arguments</param.help.text>
     <unset>
       <param.description />
       <param.guid />
-      <param.installpath.string />
       <param.installpath.combo />
-      <param.logo />
       <param.intermediate />
       <param.files.only />
       <param.output />
@@ -83,72 +86,36 @@ ${DYLD_LIBRARY_PATH}:MR/v95/runtime/maci64:MR/v95/sys/os/maci64:MR/v95/bin/maci6
       <param.native.matlab />
       <param.checkbox />
       <param.example />
-      <param.help.text />
     </unset>
     <fileset.main>
-      <file>${PROJECT_ROOT}/PHASE.m</file>
+      <file>/Users/abbey/work/PHASE/PHASE.m</file>
     </fileset.main>
     <fileset.resources>
       <file>/Users/abbey/Documents/MATLAB/FEX/barwitherr_license.txt</file>
       <file>/Users/abbey/Documents/MATLAB/FEX/findseq/findseq_license.txt</file>
-      <file>/Users/abbey/Documents/MATLAB/FEX/poi_library</file>
       <file>/Users/abbey/Documents/MATLAB/FEX/shadedErrorBar-master/shadedErrorBar_licence.txt</file>
       <file>/Users/abbey/Documents/MATLAB/FEX/xlwrite_license.txt</file>
+      <file>/Users/abbey/work/PHASE/PHASE.fig</file>
+      <file>/Users/abbey/work/PHASE/SleepyFlies</file>
+      <file>/Users/abbey/work/PHASE/SupportFiles</file>
     </fileset.resources>
     <fileset.package>
       <file>${PROJECT_ROOT}/readme.md</file>
     </fileset.package>
     <fileset.depfun>
-      <file>/Users/abbey/Documents/MATLAB/FEX/barwitherr.m</file>
-      <file>/Users/abbey/Documents/MATLAB/FEX/findseq/findseq.m</file>
-      <file>/Users/abbey/Documents/MATLAB/FEX/shadedErrorBar-master/shadedErrorBar.m</file>
-      <file>/Users/abbey/Documents/MATLAB/FEX/table2labeledcells.m</file>
-      <file>/Users/abbey/Documents/MATLAB/FEX/xlwrite.m</file>
-      <file>${PROJECT_ROOT}/Averaging.m</file>
-      <file>${PROJECT_ROOT}/PHASE.fig</file>
-      <file>${PROJECT_ROOT}/PageMultiPlots.m</file>
-      <file>${PROJECT_ROOT}/PlotType.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataExperiment/DataExperiment.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataExperiment/findBinByDatetime.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataExperiment/getDayData.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataExperiment/makeDayNightMask.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysis/DataForAnalysis.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysis/buildPlotSettings.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysis/calcAveraged.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysis/calcDayCentered.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysis/convertToSleep.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysis/getAnalysisData.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysis/layerDataForAveraging.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysis/normalizeData.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysis/plotBars.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysis/plotLine.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysis/reBinData.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisAS/DataForAnalysisAS.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisAS/experimentStatistics.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisAS/writeExperimentData.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisLatency/DataForAnalysisLatency.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisLatency/calcLatencies.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisLatency/getLatencyIntervals.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisLatency/plotLatency.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisLatency/plotSlope.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisLatency/writeLatencyData.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisPhase/DataForAnalysisPhase.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisPhase/calcPhase.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisPhase/plotPhase.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisPhase/writePhaseData.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataForAnalysisSmoothed/DataForAnalysisSmoothed.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataRaw/DataRaw.m</file>
-      <file>${PROJECT_ROOT}/SleepyFlies/@DataRaw/importFlyData.m</file>
+      <file>/Users/abbey/work/PHASE/Averaging.m</file>
+      <file>/Users/abbey/work/PHASE/PageMultiPlots.m</file>
+      <file>/Users/abbey/work/PHASE/PlotType.m</file>
     </fileset.depfun>
     <build-deliverables>
-      <file location="${PROJECT_ROOT}/PHASE_Mac/for_testing" name="splash.png" optional="false">/Users/abbey/work/mcdb-shafer-sleepyflies/PHASE_Mac/for_testing/splash.png</file>
-      <file location="${PROJECT_ROOT}/PHASE_Mac/for_testing" name="PHASE.app" optional="false">/Users/abbey/work/mcdb-shafer-sleepyflies/PHASE_Mac/for_testing/PHASE.app</file>
-      <file location="${PROJECT_ROOT}/PHASE_Mac/for_testing" name="run_PHASE.sh" optional="false">/Users/abbey/work/mcdb-shafer-sleepyflies/PHASE_Mac/for_testing/run_PHASE.sh</file>
-      <file location="${PROJECT_ROOT}/PHASE_Mac/for_testing" name="readme.txt" optional="true">/Users/abbey/work/mcdb-shafer-sleepyflies/PHASE_Mac/for_testing/readme.txt</file>
+      <file location="${PROJECT_ROOT}/PHASE_Mac/for_testing" name="run_PHASE.sh" optional="false">/Users/abbey/work/PHASE/ProjectFiles/PHASE_Mac/for_testing/run_PHASE.sh</file>
+      <file location="${PROJECT_ROOT}/PHASE_Mac/for_testing" name="PHASE.app" optional="false">/Users/abbey/work/PHASE/ProjectFiles/PHASE_Mac/for_testing/PHASE.app</file>
+      <file location="${PROJECT_ROOT}/PHASE_Mac/for_testing" name="splash.png" optional="false">/Users/abbey/work/PHASE/ProjectFiles/PHASE_Mac/for_testing/splash.png</file>
+      <file location="${PROJECT_ROOT}/PHASE_Mac/for_testing" name="readme.txt" optional="true">/Users/abbey/work/PHASE/ProjectFiles/PHASE_Mac/for_testing/readme.txt</file>
     </build-deliverables>
     <workflow />
     <matlab>
-      <root>/Applications/MATLAB_R2018b.app</root>
+      <root>/Applications/MATLAB_R2019b.app</root>
       <toolboxes>
         <toolbox name="matlabcoder" />
         <toolbox name="neuralnetwork" />
@@ -173,7 +140,7 @@ ${DYLD_LIBRARY_PATH}:MR/v95/runtime/maci64:MR/v95/sys/os/maci64:MR/v95/bin/maci6
       <vista>false</vista>
       <linux>false</linux>
       <solaris>false</solaris>
-      <osver>10.14.5</osver>
+      <osver>10.15</osver>
       <os32>false</os32>
       <os64>true</os64>
       <arch>maci64</arch>

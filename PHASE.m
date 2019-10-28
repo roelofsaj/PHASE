@@ -88,12 +88,12 @@ if ~ispc
             || exist('org.apache.poi.hssf.usermodel.HSSFWorkbook', 'class') ~= 8 ...
             || exist('org.apache.poi.xssf.usermodel.XSSFWorkbook', 'class') ~= 8
         appdir = fileparts(mfilename('fullpath'));
-        javaaddpath(fullfile(appdir, 'poi_library/poi-3.8-20120326.jar'));
-        javaaddpath(fullfile(appdir, 'poi_library/poi-ooxml-3.8-20120326.jar'));
-        javaaddpath(fullfile(appdir, 'poi_library/poi-ooxml-schemas-3.8-20120326.jar'));
-        javaaddpath(fullfile(appdir, 'poi_library/xmlbeans-2.3.0.jar'));
-        javaaddpath(fullfile(appdir, 'poi_library/dom4j-1.6.1.jar'));
-        javaaddpath(fullfile(appdir, 'poi_library/stax-api-1.0.1.jar'));
+        javaaddpath(fullfile(appdir, 'SupportFiles', 'poi_library','poi-3.8-20120326.jar'));
+        javaaddpath(fullfile(appdir, 'SupportFiles', 'poi_library','poi-ooxml-3.8-20120326.jar'));
+        javaaddpath(fullfile(appdir, 'SupportFiles', 'poi_library','poi-ooxml-schemas-3.8-20120326.jar'));
+        javaaddpath(fullfile(appdir, 'SupportFiles', 'poi_library','xmlbeans-2.3.0.jar'));
+        javaaddpath(fullfile(appdir, 'SupportFiles', 'poi_library','dom4j-1.6.1.jar'));
+        javaaddpath(fullfile(appdir, 'SupportFiles', 'poi_library','stax-api-1.0.1.jar'));
     end
 end
 
