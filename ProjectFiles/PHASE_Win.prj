@@ -14,7 +14,7 @@
     <param.company>University of Michigan</param.company>
     <param.summary>Activity, Sleep, and Entrainment Analysis</param.summary>
     <param.description />
-    <param.screenshot>${PROJECT_ROOT}\PHASEicon2.png</param.screenshot>
+    <param.screenshot>${PROJECT_ROOT}\PHASEicon1.png</param.screenshot>
     <param.guid />
     <param.installpath.string>\PHASE\</param.installpath.string>
     <param.installpath.combo>option.installpath.programfiles</param.installpath.combo>
@@ -73,14 +73,12 @@
       <file>C:\Users\aheinlei\PROJECTS\PHASE\PHASE.m</file>
     </fileset.main>
     <fileset.resources>
-      <file>C:\Users\aheinlei\PROJECTS\PHASE\+SleepyFlies</file>
       <file>C:\Users\aheinlei\PROJECTS\PHASE\Averaging.m</file>
-      <file>C:\Users\aheinlei\PROJECTS\PHASE\ImageAnalysis.m</file>
-      <file>C:\Users\aheinlei\PROJECTS\PHASE\MultiPlots.m</file>
       <file>C:\Users\aheinlei\PROJECTS\PHASE\PageMultiPlots.m</file>
       <file>C:\Users\aheinlei\PROJECTS\PHASE\PHASE.fig</file>
       <file>C:\Users\aheinlei\PROJECTS\PHASE\PHASE.m</file>
       <file>C:\Users\aheinlei\PROJECTS\PHASE\PlotType.m</file>
+      <file>C:\Users\aheinlei\PROJECTS\PHASE\SleepyFlies</file>
       <file>C:\Users\aheinlei\PROJECTS\PHASE\SupportFiles</file>
     </fileset.resources>
     <fileset.package />
