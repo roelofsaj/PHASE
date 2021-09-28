@@ -71,4 +71,4 @@ will run but will not be able to do any analysis requiring data smoothing; a war
 ### Contact Details ###
 
 This program was primarily developed by Abbey Roelofs, University of Michigan LSA Technology Services.
-Email lsait-ars@umich.edu for future assistance with this program.
+Email LSATechnologyServices@umich.edu for future assistance with this program.
