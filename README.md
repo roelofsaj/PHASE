@@ -1,6 +1,6 @@
 # README #
 
-### This repository is no longer maintained.###
+### This repository is no longer maintained. ###
 This project has been transferred to the Lopatkin Lab at Barnard College. Please refer to [their fork of the code](https://github.com/ajlopatkin/PHASE) for the most up-to-date version and to report any issues.
 
 ### PHASE ###
