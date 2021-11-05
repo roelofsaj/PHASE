@@ -1,5 +1,8 @@
 # README #
 
+### This repository is no longer maintained.###
+This project has been transferred to the Lopatkin Lab at Barnard College. Please refer to [their fork of the code](https://github.com/ajlopatkin/PHASE) for the most up-to-date version and to report any issues.
+
 ### PHASE ###
 This project was developed as a replacement for an Excel macro in use
 by the Shafer Lab, 2018-2019. The current working version of both the MATLAB app and the compiled standalones is 4.2.
@@ -71,4 +74,4 @@ will run but will not be able to do any analysis requiring data smoothing; a war
 ### Contact Details ###
 
 This program was primarily developed by Abbey Roelofs, University of Michigan LSA Technology Services.
-Email LSATechnologyServices@umich.edu for future assistance with this program.
+Responsibility for this software has since been transferred to the Lopatkin Lab at Barnard College.  
